@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+##开启重写引擎
+RewriteEngine on  
+
+##如果不是文件,则执行下面指令 
+RewriteCond %{REQUEST_FILENAME} !-f  
+
+##QSA：表示保留参数PT：再把这个URL交给Apache处理；L：作为最后一条；    
+RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]  
+</IfModule>
